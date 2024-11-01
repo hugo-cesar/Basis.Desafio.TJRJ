@@ -1,0 +1,15 @@
+.report-container {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+  .table th, .table td {
+    padding: 10px;
+    text-align: left;
+  }

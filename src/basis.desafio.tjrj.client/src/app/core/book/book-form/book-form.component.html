@@ -1,0 +1,95 @@
+<h1 id="tableLabel">Livros</h1>
+
+<div class="form-container">
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()" class="book-form">
+    <fieldset class="dynamic-fieldset">
+
+      <legend>{{ isUpdating ? 'Atualizar Livro' : 'Cadastrar Livro' }}</legend>
+
+
+      <div class="form-group">
+        <label for="bookTitle">Título</label>
+        <input id="bookTitle" formControlName="title" placeholder="Digite o título" />
+        <div *ngIf="bookForm.get('title')?.invalid && bookForm.get('title')?.touched">
+          <small class="error">O título é obrigatório.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="publisher">Editora</label>
+        <input id="publisher" formControlName="publisher" placeholder="Digite a editora" />
+        <div *ngIf="bookForm.get('publisher')?.invalid && bookForm.get('publisher')?.touched">
+          <small class="error">A editora é obrigatória.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="edition">Edição</label>
+        <input id="edition" formControlName="edition" type="number" placeholder="Digite a edição" />
+        <div *ngIf="bookForm.get('edition')?.invalid && bookForm.get('edition')?.touched">
+          <small class="error" *ngIf="bookForm.get('edition')?.errors?.['required']">A edição é obrigatória.</small>
+          <small class="error" *ngIf="bookForm.get('edition')?.errors?.['min']">A edição deve ser maior que 0.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="publicationYear">Ano de Publicação</label>
+        <input id="publicationYear" formControlName="publicationYear" type="number" placeholder="Digite o ano de publicação" />
+        <div *ngIf="bookForm.get('publicationYear')?.invalid && bookForm.get('publicationYear')?.touched">
+          <small class="error" *ngIf="bookForm.get('publicationYear')?.errors?.['required']">O ano de publicação é obrigatório.</small>
+          <small class="error" *ngIf="bookForm.get('publicationYear')?.errors?.['min']">O ano deve ser maior que 1900.</small>
+          <small class="error" *ngIf="bookForm.get('publicationYear')?.errors?.['max']">O ano deve ser menor ou igual ao ano atual.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="authors">Selecione os Autores</label>
+        <select id="authors" formControlName="authors" multiple class="form-control">
+          <option *ngFor="let author of authors" [value]="author.id">{{ author.name }}</option>
+        </select>
+        <div *ngIf="bookForm.get('authors')?.errors?.['required'] && bookForm.get('authors')?.touched">
+          <small class="error">Pelo menos um autor deve ser selecionado.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="subjects">Selecione os Assuntos</label>
+        <select id="subjects" formControlName="subjects" multiple class="form-control dynamic-height-select">
+          <option *ngFor="let subject of subjects" [value]="subject.id">{{ subject.description }}</option>
+        </select>
+        <div *ngIf="bookForm.get('subjects')?.errors?.['required'] && bookForm.get('subjects')?.touched">
+          <small class="error">Pelo menos um assunto deve ser selecionado.</small>
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>Valores</legend>
+
+        <div *ngIf="purchaseDetails" formArrayName="purchaseDetails">
+          <div *ngFor="let typeCtrl of purchaseDetails.controls; let i = index" [formGroup]="typeCtrl">
+            <input type="checkbox" [formControlName]="'typeId'" [value]="purchaseTypes[i].id" (change)="onCheckboxChange($event, i)" />
+            <label>{{ purchaseTypes[i].name }}</label>
+            <input type="number" formControlName="value" placeholder="Valor R$" />
+          </div>
+        </div>
+      </fieldset>
+
+
+      <button type="submit" [disabled]="bookForm.invalid" class="btn btn-primary">
+        <i class="bi bi-pencil"></i> {{ isUpdating ? 'Atualizar' : 'Cadastrar' }}
+      </button>
+    </fieldset>
+  </form>
+</div>
+
+<div *ngIf="showToast"
+     class="toast show"
+     [ngClass]="{'bg-success': toastType === 'success', 'bg-danger': toastType === 'error'}"
+     role="alert"
+     aria-live="assertive"
+     aria-atomic="true"
+     style="position: absolute; top: 20px; right: 20px;">
+  <div class="toast-body">
+    {{ toastMessage }}
+  </div>
+</div>

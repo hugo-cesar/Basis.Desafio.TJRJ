@@ -1,0 +1,19 @@
+.toast {
+  color: white;
+}
+
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+.toast-header {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.toast-body {
+  font-weight: normal;
+}

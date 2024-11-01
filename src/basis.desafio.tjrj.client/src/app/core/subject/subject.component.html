@@ -1,0 +1,36 @@
+<h1 id="tableLabel">Assuntos</h1>
+
+<div class="form-container">
+  <form [formGroup]="subjectForm" (ngSubmit)="addSubject()" class="subject-form">
+    <label for="subjectDescription">Assunto</label>
+    <input id="subjectDescription" formControlName="description" placeholder="Digite o assunto" />
+
+    <div *ngIf="subjectForm.get('description')?.invalid && subjectForm.get('description')?.touched">
+      <small class="error">O assunto é obrigatório.</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-sm" [disabled]="subjectForm.invalid">Adicionar</button>
+  </form>
+</div>
+
+<div class="subject-container ag-theme-alpine" style="height: 500px; width: 100%;">
+  <ag-grid-angular style="width: 550px; height: 400px;" class="ag-theme-alpine"
+                   [rowData]="subjects"
+                   [columnDefs]="columnDefs"
+                   [gridOptions]="gridOptions"
+                   (gridReady)="onGridReady($event)"
+                   (cellValueChanged)="handleCellValueChanged($event)">
+  </ag-grid-angular>
+</div>
+
+<div *ngIf="showToast"
+     class="toast show"
+     [ngClass]="{'bg-success': toastType === 'success', 'bg-danger': toastType === 'error'}"
+     role="alert"
+     aria-live="assertive"
+     aria-atomic="true"
+     style="position: absolute; top: 20px; right: 20px;">
+  <div class="toast-body">
+    {{ toastMessage }}
+  </div>
+</div>

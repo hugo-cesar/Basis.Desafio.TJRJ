@@ -1,0 +1,74 @@
+<h1>Relatório</h1>
+
+<button class="btn btn-primary" (click)="generatePdf()">
+  <i class="bi bi-file-earmark-pdf"></i> Gerar PDF
+</button>
+
+<div class="report-container" #reportContent>
+  <h2>Autores e seus Livros</h2>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Autor</th>
+        <th>Livros</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of reportData.reportBookAuthors">
+        <td>{{ item.author }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let book of item.books">{{ book }}</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="report-container" #reportContent>
+  <h2>Livros publicados por Ano</h2>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Ano</th>
+        <th>Livros</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of reportData.reportBookYears">
+        <td>{{ item.year }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let book of item.books">{{ book }}</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="report-container" #reportContent>
+  <h2>Assuntos por livro</h2>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Assunto</th>
+        <th>Livros</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of reportData.reportSubjects">
+        <td>{{ item.subject }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let book of item.books">{{ book }}</li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

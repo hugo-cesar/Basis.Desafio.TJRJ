@@ -1,0 +1,36 @@
+<h1 id="tableLabel">Autores</h1>
+
+<div class="form-container">
+  <form [formGroup]="authorForm" (ngSubmit)="addAuthor()" class="author-form">
+    <label for="authorName">Nome do Autor</label>
+    <input id="authorName" formControlName="name" placeholder="Digite o nome do autor" />
+
+    <div *ngIf="authorForm.get('name')?.invalid && authorForm.get('name')?.touched">
+      <small class="error">O nome do autor é obrigatório.</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-sm" [disabled]="authorForm.invalid">Adicionar</button>
+  </form>
+</div>
+
+<div class="author-container ag-theme-alpine" style="height: 500px; width: 100%;">
+  <ag-grid-angular style="width: 550px; height: 400px;" class="ag-theme-alpine"
+                   [rowData]="authors"
+                   [columnDefs]="columnDefs"
+                   [gridOptions]="gridOptions"
+                   (gridReady)="onGridReady($event)"
+                   (cellValueChanged)="handleCellValueChanged($event)">
+  </ag-grid-angular>
+</div>
+
+<div *ngIf="showToast"
+     class="toast show"
+     [ngClass]="{'bg-success': toastType === 'success', 'bg-danger': toastType === 'error'}"
+     role="alert"
+     aria-live="assertive"
+     aria-atomic="true"
+     style="position: absolute; top: 20px; right: 20px;">
+  <div class="toast-body">
+    {{ toastMessage }}
+  </div>
+</div>

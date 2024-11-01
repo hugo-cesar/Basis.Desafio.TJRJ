@@ -1,0 +1,6 @@
+@Basis.Desafio.TJRJ.Server_HostAddress = http://localhost:5179
+
+GET {{Basis.Desafio.TJRJ.Server_HostAddress}}/authors/
+Accept: application/json
+
+###

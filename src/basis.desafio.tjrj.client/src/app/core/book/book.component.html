@@ -1,0 +1,24 @@
+<h1 id="tableLabel">Livros</h1>
+
+<a routerLink="/livros/cadastrar" class="btn btn-primary">Cadastrar Livro</a>
+
+<div class="book-container ag-theme-alpine" style="height: 500px; width: 100%; margin-top:20px">
+  <ag-grid-angular style="width: 90%; height: 400px;" class="ag-theme-alpine"
+                   [rowData]="books"
+                   [columnDefs]="columnDefs"
+                   [gridOptions]="gridOptions"
+                   (gridReady)="onGridReady($event)">
+  </ag-grid-angular>
+</div>
+
+<div *ngIf="showToast"
+     class="toast show"
+     [ngClass]="{'bg-success': toastType === 'success', 'bg-danger': toastType === 'error'}"
+     role="alert"
+     aria-live="assertive"
+     aria-atomic="true"
+     style="position: absolute; top: 20px; right: 20px;">
+  <div class="toast-body">
+    {{ toastMessage }}
+  </div>
+</div>
