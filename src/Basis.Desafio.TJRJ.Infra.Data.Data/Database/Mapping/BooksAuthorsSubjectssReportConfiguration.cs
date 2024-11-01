@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Basis.Desafio.TJRJ.Infra.Data.Data.Database.Mapping;
 
-public class LivrosAutoresAssuntosReportConfiguration : IEntityTypeConfiguration<BooksAuthorsSubjectsReport>
+public class BooksAuthorsSubjectssReportConfiguration : IEntityTypeConfiguration<BooksAuthorsSubjectsReport>
 {
     public void Configure(EntityTypeBuilder<BooksAuthorsSubjectsReport> builder)
     {
