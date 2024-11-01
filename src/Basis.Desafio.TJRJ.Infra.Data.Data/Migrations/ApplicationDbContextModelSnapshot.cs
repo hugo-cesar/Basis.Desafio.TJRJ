@@ -43,17 +43,52 @@ namespace Basis.Desafio.TJRJ.Infra.Data.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Nome 1"
+                            Name = "Machado de Assis"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Nome 2"
+                            Name = "Jorge Amado"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Nome 3"
+                            Name = "Clarice Lispector"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Carlos Drummond de Andrade"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "José Saramago"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Raquel de Queiroz"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Guimarães Rosa"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Érico Veríssimo"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Lygia Fagundes Telles"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "Adélia Prado"
                         });
                 });
 
@@ -88,6 +123,128 @@ namespace Basis.Desafio.TJRJ.Infra.Data.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Livro", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Edition = 1,
+                            PublicationYear = "1899",
+                            Publisher = "Editora A",
+                            Title = "Dom Casmurro"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Edition = 1,
+                            PublicationYear = "1958",
+                            Publisher = "Editora B",
+                            Title = "Gabriela, Cravo e Canela"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Edition = 1,
+                            PublicationYear = "1844",
+                            Publisher = "Editora C",
+                            Title = "A Moreninha"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Edition = 1,
+                            PublicationYear = "1881",
+                            Publisher = "Editora D",
+                            Title = "Memórias Póstumas de Brás Cubas"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Edition = 1,
+                            PublicationYear = "1857",
+                            Publisher = "Editora E",
+                            Title = "O Guarani"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Edition = 1,
+                            PublicationYear = "1988",
+                            Publisher = "Editora F",
+                            Title = "O Alquimista"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Edition = 1,
+                            PublicationYear = "1967",
+                            Publisher = "Editora G",
+                            Title = "Cem Anos de Solidão"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Edition = 1,
+                            PublicationYear = "1902",
+                            Publisher = "Editora H",
+                            Title = "Os Sertões"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Edition = 1,
+                            PublicationYear = "1977",
+                            Publisher = "Editora I",
+                            Title = "A Hora da Estrela"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Edition = 1,
+                            PublicationYear = "1878",
+                            Publisher = "Editora J",
+                            Title = "O Primo Basílio"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Edition = 1,
+                            PublicationYear = "1938",
+                            Publisher = "Editora K",
+                            Title = "Vidas Secas"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Edition = 1,
+                            PublicationYear = "1890",
+                            Publisher = "Editora L",
+                            Title = "O Cortiço"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Edition = 1,
+                            PublicationYear = "1964",
+                            Publisher = "Editora M",
+                            Title = "A Paixão segundo G.H."
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Edition = 1,
+                            PublicationYear = "1888",
+                            Publisher = "Editora N",
+                            Title = "Os Maias"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Edition = 2,
+                            PublicationYear = "1857",
+                            Publisher = "Editora O",
+                            Title = "O Guarani"
+                        });
                 });
 
             modelBuilder.Entity("Basis.Desafio.TJRJ.Domain.Features.Books.Entities.BookAuthors", b =>
@@ -228,6 +385,108 @@ namespace Basis.Desafio.TJRJ.Infra.Data.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Assunto", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Ficção"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Romance"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Aventura"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Fantasia"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Mistério"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Terror"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "Drama"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Comédia"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "Biografia"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Description = "História"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Description = "Poesia"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Description = "Crônica"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            Description = "Literatura Infantil"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Description = "Educação"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            Description = "Autoajuda"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            Description = "Ciência"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            Description = "Filosofia"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            Description = "Sociedade"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            Description = "Cultura"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            Description = "Religião"
+                        });
                 });
 
             modelBuilder.Entity("Basis.Desafio.TJRJ.Domain.Features.Books.Entities.BookAuthors", b =>

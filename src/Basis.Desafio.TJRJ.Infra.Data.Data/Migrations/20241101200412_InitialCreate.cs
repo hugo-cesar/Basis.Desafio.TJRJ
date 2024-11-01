@@ -141,13 +141,69 @@ namespace Basis.Desafio.TJRJ.Infra.Data.Data.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Assunto",
+                columns: new[] { "CodAs", "Descricao" },
+                values: new object[,]
+                {
+                    { 1, "Ficção" },
+                    { 2, "Romance" },
+                    { 3, "Aventura" },
+                    { 4, "Fantasia" },
+                    { 5, "Mistério" },
+                    { 6, "Terror" },
+                    { 7, "Drama" },
+                    { 8, "Comédia" },
+                    { 9, "Biografia" },
+                    { 10, "História" },
+                    { 11, "Poesia" },
+                    { 12, "Crônica" },
+                    { 13, "Literatura Infantil" },
+                    { 14, "Educação" },
+                    { 15, "Autoajuda" },
+                    { 16, "Ciência" },
+                    { 17, "Filosofia" },
+                    { 18, "Sociedade" },
+                    { 19, "Cultura" },
+                    { 20, "Religião" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Autor",
                 columns: new[] { "CodAu", "Nome" },
                 values: new object[,]
                 {
-                    { 1, "Nome 1" },
-                    { 2, "Nome 2" },
-                    { 3, "Nome 3" }
+                    { 1, "Machado de Assis" },
+                    { 2, "Jorge Amado" },
+                    { 3, "Clarice Lispector" },
+                    { 4, "Carlos Drummond de Andrade" },
+                    { 5, "José Saramago" },
+                    { 6, "Raquel de Queiroz" },
+                    { 7, "Guimarães Rosa" },
+                    { 8, "Érico Veríssimo" },
+                    { 9, "Lygia Fagundes Telles" },
+                    { 10, "Adélia Prado" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Livro",
+                columns: new[] { "CodL", "Edicao", "AnoPublicacao", "Editora", "Titulo" },
+                values: new object[,]
+                {
+                    { 1, 1, "1899", "Editora A", "Dom Casmurro" },
+                    { 2, 1, "1958", "Editora B", "Gabriela, Cravo e Canela" },
+                    { 3, 1, "1844", "Editora C", "A Moreninha" },
+                    { 4, 1, "1881", "Editora D", "Memórias Póstumas de Brás Cubas" },
+                    { 5, 1, "1857", "Editora E", "O Guarani" },
+                    { 6, 1, "1988", "Editora F", "O Alquimista" },
+                    { 7, 1, "1967", "Editora G", "Cem Anos de Solidão" },
+                    { 8, 1, "1902", "Editora H", "Os Sertões" },
+                    { 9, 1, "1977", "Editora I", "A Hora da Estrela" },
+                    { 10, 1, "1878", "Editora J", "O Primo Basílio" },
+                    { 11, 1, "1938", "Editora K", "Vidas Secas" },
+                    { 12, 1, "1890", "Editora L", "O Cortiço" },
+                    { 13, 1, "1964", "Editora M", "A Paixão segundo G.H." },
+                    { 14, 1, "1888", "Editora N", "Os Maias" },
+                    { 15, 2, "1857", "Editora O", "O Guarani" }
                 });
 
             migrationBuilder.InsertData(
