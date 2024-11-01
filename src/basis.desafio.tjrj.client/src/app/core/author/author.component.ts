@@ -66,7 +66,7 @@ export class AuthorComponent implements OnInit {
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
     this.authorForm = this.fb.group({
-      name: ['', Validators.required]
+      name: ['', [Validators.required, Validators.maxLength(40)]]
     });
   }
 

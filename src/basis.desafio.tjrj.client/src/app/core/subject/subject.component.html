@@ -5,8 +5,9 @@
     <label for="subjectDescription">Assunto</label>
     <input id="subjectDescription" formControlName="description" placeholder="Digite o assunto" />
 
-    <div *ngIf="subjectForm.get('description')?.invalid && subjectForm.get('description')?.touched">
-      <small class="error">O assunto é obrigatório.</small>
+    <div *ngIf="subjectForm.get('name')?.touched">
+      <small class="error" *ngIf="subjectForm.get('name')?.errors?.['required']">O assunto é obrigatório.</small>
+      <small class="error" *ngIf="subjectForm.get('name')?.errors?.['maxlength']">O assunto deve ter no máximo 20 caracteres.</small>
     </div>
 
     <button type="submit" class="btn btn-primary btn-sm" [disabled]="subjectForm.invalid">Adicionar</button>

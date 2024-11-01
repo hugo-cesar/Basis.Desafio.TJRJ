@@ -5,9 +5,11 @@
     <label for="authorName">Nome do Autor</label>
     <input id="authorName" formControlName="name" placeholder="Digite o nome do autor" />
 
-    <div *ngIf="authorForm.get('name')?.invalid && authorForm.get('name')?.touched">
-      <small class="error">O nome do autor é obrigatório.</small>
+    <div *ngIf="authorForm.get('name')?.touched">
+      <small class="error" *ngIf="authorForm.get('name')?.errors?.['required']">O nome do autor é obrigatório.</small>
+      <small class="error" *ngIf="authorForm.get('name')?.errors?.['maxlength']">O nome do autor deve ter no máximo 40 caracteres.</small>
     </div>
+
 
     <button type="submit" class="btn btn-primary btn-sm" [disabled]="authorForm.invalid">Adicionar</button>
   </form>

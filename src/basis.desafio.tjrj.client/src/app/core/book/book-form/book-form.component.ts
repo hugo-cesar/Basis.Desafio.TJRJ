@@ -37,8 +37,8 @@ export class BookFormComponent {
 
   constructor(private http: HttpClient, private fb: FormBuilder, private route: ActivatedRoute) {
     this.bookForm = this.fb.group({
-      title: ['', Validators.required],
-      publisher: ['', Validators.required],
+      title: ['', [Validators.required, Validators.maxLength(40)]],
+      publisher: ['', [Validators.required, Validators.maxLength(40)]],
       edition: [null, [Validators.required, Validators.min(1)]],
       publicationYear: [null, [Validators.required, Validators.min(1900), Validators.max(2040)]],
       authors: [[], Validators.required],

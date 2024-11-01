@@ -67,7 +67,7 @@ export class SubjectComponent implements OnInit {
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
     this.subjectForm = this.fb.group({
-      description: ['', Validators.required]
+      description: ['', [Validators.required, Validators.maxLength(20)]]
     });
   }
 

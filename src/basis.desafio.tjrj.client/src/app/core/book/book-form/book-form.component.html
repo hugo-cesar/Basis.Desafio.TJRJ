@@ -6,21 +6,26 @@
 
       <legend>{{ isUpdating ? 'Atualizar Livro' : 'Cadastrar Livro' }}</legend>
 
-
       <div class="form-group">
         <label for="bookTitle">Título</label>
         <input id="bookTitle" formControlName="title" placeholder="Digite o título" />
-        <div *ngIf="bookForm.get('title')?.invalid && bookForm.get('title')?.touched">
-          <small class="error">O título é obrigatório.</small>
+
+        <div *ngIf="bookForm.get('title')?.touched">
+          <small class="error" *ngIf="bookForm.get('title')?.errors?.['required']">O título é obrigatório.</small>
+          <small class="error" *ngIf="bookForm.get('title')?.errors?.['maxlength']">O título deve ter no máximo 40 caracteres.</small>
         </div>
+
       </div>
 
       <div class="form-group">
         <label for="publisher">Editora</label>
         <input id="publisher" formControlName="publisher" placeholder="Digite a editora" />
-        <div *ngIf="bookForm.get('publisher')?.invalid && bookForm.get('publisher')?.touched">
-          <small class="error">A editora é obrigatória.</small>
+
+        <div *ngIf="bookForm.get('publisher')?.touched">
+          <small class="error" *ngIf="bookForm.get('publisher')?.errors?.['required']">A editora é obrigatória.</small>
+          <small class="error" *ngIf="bookForm.get('publisher')?.errors?.['maxlength']">A editora deve ter no máximo 40 caracteres.</small>
         </div>
+
       </div>
 
       <div class="form-group">
