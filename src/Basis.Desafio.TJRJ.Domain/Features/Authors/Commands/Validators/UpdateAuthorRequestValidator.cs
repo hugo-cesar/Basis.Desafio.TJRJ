@@ -3,10 +3,13 @@ using FluentValidation;
 
 namespace Basis.Desafio.TJRJ.Domain.Features.Authors.Commands.Validators;
 
-public class AddAuthorRequestValidator : AbstractValidator<AddAuthorRequest>
+public class UpdateAuthorRequestValidator : AbstractValidator<UpdateAuthorRequest>
 {
-    public AddAuthorRequestValidator()
+    public UpdateAuthorRequestValidator()
     {
+        RuleFor(item => item.Id)
+            .GreaterThan(0);
+
         RuleFor(item => item.Name)
             .NotEmpty()
             .MaximumLength(40);
