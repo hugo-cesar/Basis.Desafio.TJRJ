@@ -2,7 +2,6 @@
 using Basis.Desafio.TJRJ.Domain.Features.Books.Dtos;
 using Basis.Desafio.TJRJ.Domain.Features.Books.Entities;
 using MediatR;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 

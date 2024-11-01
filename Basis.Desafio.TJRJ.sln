@@ -25,6 +25,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basis.Desafio.TJRJ.Infra.Cr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basis.Desafio.TJRJ.Infra.Data.Data", "src\Basis.Desafio.TJRJ.Infra.Data.Data\Basis.Desafio.TJRJ.Infra.Data.Data.csproj", "{0CA35BF5-77D6-4DCD-8ACA-449E910946E7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Tests", "4 - Tests", "{0B166670-899A-417C-849E-15E1A1376A6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basis.Desafio.TJRJ.UnitTests", "tests\Basis.Desafio.TJRJ.UnitTests\Basis.Desafio.TJRJ.UnitTests.csproj", "{C70CB66F-4450-4AFD-A053-1A2FBF04ED30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +57,10 @@ Global
 		{0CA35BF5-77D6-4DCD-8ACA-449E910946E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CA35BF5-77D6-4DCD-8ACA-449E910946E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CA35BF5-77D6-4DCD-8ACA-449E910946E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C70CB66F-4450-4AFD-A053-1A2FBF04ED30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C70CB66F-4450-4AFD-A053-1A2FBF04ED30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C70CB66F-4450-4AFD-A053-1A2FBF04ED30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C70CB66F-4450-4AFD-A053-1A2FBF04ED30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +73,7 @@ Global
 		{83292338-4261-49D1-B4FC-AE6F7FFA3DDB} = {33942473-239B-49A2-85B5-399C8B023A2A}
 		{2E3786D2-64B9-4B10-AB5F-EB650A264118} = {F50A9A09-BAD8-4EF2-AEB0-CB16033E2A38}
 		{0CA35BF5-77D6-4DCD-8ACA-449E910946E7} = {6C2AA4F6-DBC1-426F-BDFA-41F57CA71C71}
+		{C70CB66F-4450-4AFD-A053-1A2FBF04ED30} = {0B166670-899A-417C-849E-15E1A1376A6A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {185CE6FF-1E8A-4E50-9310-B81224CDB97C}
